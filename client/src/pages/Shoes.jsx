@@ -17,7 +17,19 @@ const Shoes = () => {
     }, [])
 
   return (
-    <div>shoes</div>
+    <div>
+        <h1>Shoes</h1>
+        <div className="shoes">
+            {shoes.map(shoe => (
+                <div className="shoe">
+                    {shoe.img && <img src={shoe.img} alt="Shoe display" />}
+                    <h1>{shoe.name}</h1>
+                    <p>{shoe.desc}</p>
+                    <span>{shoe.price}</span>
+                </div>
+            ))}
+        </div>
+    </div>
   )
 }
 
