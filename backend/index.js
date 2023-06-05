@@ -31,10 +31,10 @@ app.get("/shoes", (req,res) => {
 app.post("/shoes", (req, res) => {
     const query = "INSERT INTO shoes ('shoes_name', 'shoes_desc', 'shoes_price', 'shoes_img') VALUES (?)";
     const values = [
-        req.body.shoes_name,
-        req.body.shoes_desc,
-        req.body.shoes_price,
-        req.body.shoes_img
+        req.body.name,
+        req.body.desc,
+        req.body.price,
+        req.body.image
     ]
 
 
