@@ -1,5 +1,5 @@
 ### React CRUD overview using Node
-express mysql nodemon react-router-dom axios
+express mysql nodemon react-router-dom axios cors
 
 # Getting Started with Create React App
 
