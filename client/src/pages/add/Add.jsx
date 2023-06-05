@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
   const [shoe, setShoe] = useState({
@@ -13,11 +14,14 @@ const Add = () => {
     setShoe((prev) => ({...prev, [e.target.name]: e.target.value}));
   }
 
+  const navigate = useNavigate();
+
   const handleClick = async (e) => {
     e.preventDefault();
 
     try {
       await axios.post("http://localhost/shoes", shoe);
+      navigate("/");
     } catch(err) {
       console.log("There has been an error : " + err);
     }
