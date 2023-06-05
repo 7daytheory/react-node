@@ -28,3 +28,23 @@ code {
   height: 300px;
   width: auto;
 }
+
+.addBtn {
+  padding: 0.5rem 1rem;
+  margin: 15px;
+  background: #666;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.addBtn:hover {
+  opacity: 0.8;
+  transition-duration: 0.5s;
+}
+
+.addBtn a {
+  color: #FFF;
+  text-decoration: none;
+}
