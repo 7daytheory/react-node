@@ -4,9 +4,9 @@ import {
   Routes,
   Route
 } from "react-router-dom"
-import Add from "./pages/Add"
-import Shoes from "./pages/Shoes"
-import Update from './pages/Update';
+import Add from "./pages/add/Add"
+import Shoes from "./pages/shoes/Shoes"
+import Update from './pages/update/Update';
 
 function App() {
   return (
