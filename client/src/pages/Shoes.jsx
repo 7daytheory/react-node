@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const shoes = () => {
+const Shoes = () => {
+    const [shoes, setShoes] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+
+            } catch(err) {
+
+            }
+        }
+    })
+
   return (
     <div>shoes</div>
   )
 }
 
-export default shoes
+export default Shoes

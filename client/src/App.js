@@ -3,7 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route
-} from "react-router-dom";
+} from "react-router-dom"
 import Add from "./pages/Add"
 import Shoes from "./pages/Shoes"
 import Update from "./pages/Update"
