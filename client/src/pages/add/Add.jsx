@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
   const [shoe, setShoe] = useState({
-    shoeName: "",
+    name: "",
     desc: "",
     price: null,
     image: ""
@@ -18,16 +18,14 @@ const Add = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-
     try {
-      await axios.post("http://localhost/shoes", shoe);
+      console.log(shoe);
+      await axios.post("http://localhost:8800/shoes", shoe);
       navigate("/");
     } catch(err) {
       console.log("There has been an error : " + err);
     }
   }
-
-  console.log(shoe);
 
   return (
     <div className="form">

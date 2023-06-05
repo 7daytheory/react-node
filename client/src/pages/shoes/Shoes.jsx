@@ -8,10 +8,10 @@ const Shoes = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get("http://localhost:8800/shoes")
+                const res = await axios.get("http://localhost:8800/shoes", shoes);
                 setShoes(res.data);
             } catch(err) {
-                console.log(err);
+                console.log(err.response.data);
             }
         }
         fetchData()
