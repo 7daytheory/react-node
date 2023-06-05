@@ -21,7 +21,7 @@ const Shoes = () => {
         <h1>Shoes</h1>
         <div className="shoes">
             {shoes.map(shoe => (
-                <div className="shoe">
+                <div className="shoe" key={shoe.shoes_id}>
                     {shoe.shoes_img && <img src={shoe.shoes_img} alt="Shoe display" />}
                     <h2>{shoe.shoes_name}</h2>
                     <h3>{shoe.shoes_price}</h3>
