@@ -6,7 +6,7 @@ import {
 } from "react-router-dom"
 import Add from "./pages/Add"
 import Shoes from "./pages/Shoes"
-import Update from "./pages/Update"
+import Update from './pages/Update';
 
 function App() {
   return (

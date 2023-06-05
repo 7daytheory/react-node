@@ -22,10 +22,10 @@ const Shoes = () => {
         <div className="shoes">
             {shoes.map(shoe => (
                 <div className="shoe">
-                    {shoe.img && <img src={shoe.img} alt="Shoe display" />}
-                    <h1>{shoe.name}</h1>
-                    <p>{shoe.desc}</p>
-                    <span>{shoe.price}</span>
+                    {shoe.shoes_img && <img src={shoe.shoes_img} alt="Shoe display" />}
+                    <h2>{shoe.shoes_name}</h2>
+                    <h3>{shoe.shoes_price}</h3>
+                    <p>{shoe.shoes_desc}</p>
                 </div>
             ))}
         </div>

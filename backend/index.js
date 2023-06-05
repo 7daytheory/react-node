@@ -25,8 +25,8 @@ app.get("/shoes", (req,res) => {
 })
 
 app.post("/shoes", (req, res) => {
-    const query = "INSERT INTO shoes (NULL, 'shoe', 'desc', 'price') VALUES (?)";
-    const values = ["Adidas", "Description of Adidas shoe", 25];
+    const query = "INSERT INTO shoes (NULL, 'shoe', 'desc', 'price', 'img') VALUES (?)";
+    const values = ["Adidas", "Description of Adidas shoe", 25, 'http://www.imageUrl.com'];
 
     db.query(query, [values], (err,data) => {
         if(err) return res.json(err);
