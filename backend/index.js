@@ -17,11 +17,18 @@ app.get("/", (req,res) => {
 app.get("/shoes", (req,res) => {
     const query = "SELECT * from shoes";
     db.query(query,(err,data) => {
-        if(err) {
-            console.log(err)
-        } else {
-        console.log(data);
-        }
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+app.post("/shoes", (req, res) => {
+    const query = "INSERT INTO shoes (NULL, 'shoe', 'desc', 'price') VALUES (?)";
+    const values = ["Adidas", "Description of Adidas shoe", 25];
+
+    db.query(query, [values], (err,data) => {
+        if(err) return res.json(err);
+        return res.json(data);
     })
 })
 
