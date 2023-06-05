@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
   const [shoe, setShoe] = useState({
-    shoeName: "",
+    name: "",
     desc: "",
     price: null,
     image: ""
@@ -12,7 +14,18 @@ const Add = () => {
     setShoe((prev) => ({...prev, [e.target.name]: e.target.value}));
   }
 
-  console.log(shoe);
+  const navigate = useNavigate();
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(shoe);
+      await axios.post("http://localhost:8800/shoes", shoe);
+      navigate("/");
+    } catch(err) {
+      console.log("There has been an error : " + err);
+    }
+  }
 
   return (
     <div className="form">
@@ -21,6 +34,7 @@ const Add = () => {
         <input type="text" placeholder="Shoe Description" name="desc" onChange={handleChange}/>
         <input type="text" placeholder="Shoe Price" name="price" onChange={handleChange}/>
         <input type="text" placeholder="Shoe Image" name="image" onChange={handleChange}/>
+        <button onClick={handleClick}>Submit</button>
     </div>
   )
 }
