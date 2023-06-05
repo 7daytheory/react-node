@@ -23,12 +23,12 @@ app.get("/shoes", (req,res) => {
 })
 
 app.post("/shoes", (req, res) => {
-    const query = "INSERT INTO shoes (NULL, 'shoe', 'desc', 'price') VALUES (?)";
-    const values = ["Adidas", "Description of Adidas shoe", 25];
+    const query = "INSERT INTO shoes (`shoes_name`, `shoes_desc`, `shoes_price`) VALUES (?)";
+    const values = ['Adidas', 'Descriptin test', 25];
 
     db.query(query, [values], (err,data) => {
         if(err) return res.json(err);
-        return res.json(data);
+        return res.json("New Shoe has been added");
     })
 })
 
