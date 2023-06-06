@@ -27,6 +27,12 @@ const Shoes = () => {
                     <h2>{shoe.shoes_name}</h2>
                     <h3>{shoe.shoes_price}</h3>
                     <p>{shoe.shoes_desc}</p>
+                    <Link
+                    to={`/update/${shoes.id}`}
+                    className="updateBtn"
+                    >
+                    Update
+              </Link>
                 </div>
             ))}
         </div>
