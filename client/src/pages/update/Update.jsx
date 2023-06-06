@@ -9,6 +9,8 @@ const Update = () => {
     image: "",
   });
 
+  const [error, setError] = useState(false)
+
   const handleClick = async (e) => {
     e.preventDefault();
 
@@ -42,6 +44,7 @@ const Update = () => {
         name="image"
       />
       <button onClick={handleClick}>Update</button>
+      {error && "Something went wrong!"}
       <Link to="/">See all shoes</Link>
     </div>
   );
