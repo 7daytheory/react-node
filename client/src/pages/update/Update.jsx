@@ -1,20 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
-const handleClick = async (e) => {
-  e.preventDefault();
-
-  console.log("Form Clicked!");
-};
-
 const Update = () => {
+  const [shoe, setShoe] = useState({
+    name: "",
+    desc: "",
+    price: null,
+    image: "",
+  });
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    //Add axios call to get data from ID passed from link
+  
+    console.log("Form Clicked!");
+  };
+
   return (
     <div className="form">
       <h1>Update shoe</h1>
       <input
         type="text"
         placeholder="Shoe name"
-        name="title"
+        name="name"
       />
       <textarea
         rows={5}
