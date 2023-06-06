@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Update = () => {
   const [shoe, setShoe] = useState({
@@ -9,7 +9,13 @@ const Update = () => {
     image: "",
   });
 
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
+
+  const location = useLocation();
+
+  const shoeId = location.pathname.split("/")[2];
+
+  console.log(shoeId);
 
   const handleClick = async (e) => {
     e.preventDefault();
