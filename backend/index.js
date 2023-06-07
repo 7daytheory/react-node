@@ -44,6 +44,18 @@ app.post("/shoes", (req, res) => {
     })
 })
 
+app.get("/shoes/:id", (req, res) => {
+    const id = req.params.id;
+    const q = `SELECT * FROM shoes WHERE shoes_id = ${id}`;
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  });
+
 app.listen(8800, () => {
     console.log("Connected Express");
 });

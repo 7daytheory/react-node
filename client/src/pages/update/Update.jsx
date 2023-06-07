@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import axios from "axios";
 
 const Update = () => {
   const [shoe, setShoe] = useState({
@@ -15,7 +16,19 @@ const Update = () => {
 
   const shoeId = location.pathname.split("/")[2];
 
-  console.log(shoeId);
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const res = await axios.get(`http://localhost:8800/shoes/${shoeId}`, shoe);
+            setShoe(res.data);
+            console.log(shoe);
+        } catch(err) {
+            console.log(err.response.data);
+            setError("There has been an error!");
+        }
+    }
+    fetchData()
+}, [])
 
   const handleClick = async (e) => {
     e.preventDefault();
